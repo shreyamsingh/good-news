@@ -1,4 +1,3 @@
-#import config
 import requests
 from nltk.tag import pos_tag
 from nltk.stem.wordnet import WordNetLemmatizer
