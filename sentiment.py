@@ -1,4 +1,4 @@
-import config
+#import config
 import requests
 from nltk.tag import pos_tag
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -10,6 +10,7 @@ import pandas as pd
 from io import StringIO
 import pickle
 from datetime import date, timedelta, datetime
+import os
 
 f = open('classifier.pickle', 'rb')
 classifier = pickle.load(f)
@@ -45,7 +46,7 @@ def getProbs(text):
     return dist.prob("Positive")
 
 def makeDF(df, query):
-    api_key = config.API_KEY
+    api_key = os.environ['API_KEY']
     today = date.today()
     week_ago = today - timedelta(days=7)
     url = (r'https://newsapi.org/v2/everything?q=' + query + " NOT pandemic NOT dies" + r'&from=' + str(week_ago) + r'&to=' + str(today) + r'&sortBy=popularity&excludeDomains=techcrunch.com,theverge.com,theinventory.com,gizmodo.com&apiKey=' + api_key)
