@@ -1,0 +1,111 @@
+<div class='card-deck'>
+  <div class="card">
+    <img src={{ content.img1 }} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ content.title1 }}</h5>
+      <p class="card-text">{{ content.desc1 }}</p>
+      <a href={{ content.url1 }} class="btn btn-primary" target="_blank">Full Article [{{ content.source1 }}]</a>
+    </div>
+    <div class="card-footer text-success">
+      <small>{{ content.sent1 }} Positive</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src={{ content.img2 }} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ content.title2 }}</h5>
+      <p class="card-text">{{ content.desc2 }}</p>
+      <a href={{ content.url2 }} class="btn btn-primary" target="_blank">Full Article [{{ content.source2 }}]</a>
+    </div>
+    <div class="card-footer text-success">
+      <small>{{ content.sent2 }} Positive</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src={{ content.img3 }} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ content.title3 }}</h5>
+      <p class="card-text">{{ content.desc3 }}</p>
+      <a href={{ content.url3 }} class="btn btn-primary" target="_blank">Full Article [{{ content.source3 }}]</a>
+    </div>
+    <div class="card-footer text-success">
+      <small>{{ content.sent3 }} Positive</small>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class='card-deck'>
+  <div class="card">
+    <img src={{ content.img4 }} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ content.title4 }}</h5>
+      <p class="card-text">{{ content.desc4 }}</p>
+      <a href={{ content.url4 }} class="btn btn-primary" target="_blank">Full Article [{{ content.source4 }}]</a>
+    </div>
+    <div class="card-footer text-success">
+      <small>{{ content.sent4 }} Positive</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src={{ content.img5 }} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ content.title5 }}</h5>
+      <p class="card-text">{{ content.desc5 }}</p>
+      <a href={{ content.url5 }} class="btn btn-primary" target="_blank">Full Article [{{ content.source5 }}]</a>
+    </div>
+    <div class="card-footer text-success">
+      <small>{{ content.sent5 }} Positive</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src={{ content.img6 }} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ content.title6 }}</h5>
+      <p class="card-text">{{ content.desc6 }}</p>
+      <a href={{ content.url6 }} class="btn btn-primary" target="_blank">Full Article [{{ content.source6 }}]</a>
+    </div>
+    <div class="card-footer text-success">
+      <small>{{ content.sent6 }} Positive</small>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class='card-deck'>
+  <div class="card">
+    <img src={{ content.img7 }} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ content.title7 }}</h5>
+      <p class="card-text">{{ content.desc7 }}</p>
+      <a href={{ content.url7 }} class="btn btn-primary" target="_blank">Full Article [{{ content.source7 }}]</a>
+    </div>
+    <div class="card-footer text-success">
+      <small>{{ content.sent7 }} Positive</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src={{ content.img8 }} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ content.title8 }}</h5>
+      <p class="card-text">{{ content.desc8 }}</p>
+      <a href={{ content.url8 }} class="btn btn-primary" target="_blank">Full Article [{{ content.source8 }}]</a>
+    </div>
+    <div class="card-footer text-success">
+      <small>{{ content.sent8 }} Positive</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src={{ content.img9 }} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ content.title9 }}</h5>
+      <p class="card-text">{{ content.desc9 }}</p>
+      <a href={{ content.url9 }} class="btn btn-primary" target="_blank">Full Article [{{ content.source9 }}]</a>
+    </div>
+    <div class="card-footer text-success">
+      <small>{{ content.sent9 }} Positive</small>
+    </div>
+  </div>
+</div>
+<br>
+
