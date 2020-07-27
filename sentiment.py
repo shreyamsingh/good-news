@@ -63,10 +63,11 @@ def getData():
     df = pd.DataFrame(columns=["Title", "Description", "Content", "URL", "Source", "imgURL", "Sentiment", "Date"])
     df = makeDF(df, "happy")
     df = makeDF(df, "good")
-    to_append = ["", "", "", "", "", "", 0, date.today()]
+    to_append = ["", "", "", "", "", "", 0, datetime.today()]
     df.loc[len(df)] = to_append
     df.drop_duplicates(subset=["Title"], keep="first", inplace=True)
     df = df.sort_values(by=['Sentiment'])
     df = df.reset_index(drop=False)
-    print(df.head())
+    #print(df.head())
     df.to_pickle("data.pickle")
+#getData()
