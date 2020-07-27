@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import sentiment
 import pandas as pd
-from datetime import date
+from datetime import date, datetime
 
 app = Flask(__name__)
 
@@ -10,11 +10,12 @@ def main():
     #sentiment.getData()
     df = pd.read_pickle("data.pickle")
     col = df["Date"]
-    today = date.today()
-    diff = (today - (col.max().date())).days
-    #if diff > 0:
-        #sentiment.getData()
-    sentiment.getData()
+    today = datetime.today()
+    diff = (today - (col.max())).seconds // 3600
+    print(diff)
+    print(df)
+    if diff > 0:
+        sentiment.getData()
     content = {}
     minSent = float(df.loc[len(df)-6]["Sentiment"])
     for i in range(len(df)-1, len(df)-7, -1):
