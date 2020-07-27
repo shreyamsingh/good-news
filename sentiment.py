@@ -45,8 +45,7 @@ def getProbs(text):
     return dist.prob("Positive")
 
 def makeDF(df, query):
-    #api_key = os.environ['API_KEY']
-    api_key = "53ec34fc56bf444ba83ae0221e9c7b78"
+    api_key = os.environ['API_KEY']
     today = date.today()
     week_ago = today - timedelta(days=7)
     url = (r'https://newsapi.org/v2/everything?q=' + query + " NOT pandemic NOT dies" + r'&from=' + str(week_ago) + r'&to=' + str(today) + r'&sortBy=popularity&excludeDomains=techcrunch.com,theverge.com,theinventory.com,gizmodo.com&apiKey=' + api_key)
