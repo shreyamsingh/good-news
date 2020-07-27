@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     #sentiment.getData()
-    df = pd.read_pickle("data.pickle")
+    df = pd.read_pickle("tmp/data.pickle")
     col = df["Date"]
     today = datetime.today()
     diff = (today - (col.max())).seconds // 3600

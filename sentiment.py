@@ -68,5 +68,5 @@ def getData():
     df = df.sort_values(by=['Sentiment'])
     df = df.reset_index(drop=False)
     #print(df.head())
-    df.to_pickle("data.pickle")
+    df.to_pickle("tmp/data.pickle")
 #getData()
