@@ -45,7 +45,8 @@ def getProbs(text):
     return dist.prob("Positive")
 
 def makeDF(df, query):
-    api_key = os.environ['API_KEY']
+    #api_key = os.environ['API_KEY']
+    api_key = "53ec34fc56bf444ba83ae0221e9c7b78"
     today = date.today()
     week_ago = today - timedelta(days=7)
     url = (r'https://newsapi.org/v2/everything?q=' + query + " NOT pandemic NOT dies" + r'&from=' + str(week_ago) + r'&to=' + str(today) + r'&sortBy=popularity&excludeDomains=techcrunch.com,theverge.com,theinventory.com,gizmodo.com&apiKey=' + api_key)
@@ -63,8 +64,11 @@ def getData():
     df = pd.DataFrame(columns=["Title", "Description", "Content", "URL", "Source", "imgURL", "Sentiment", "Date"])
     df = makeDF(df, "happy")
     df = makeDF(df, "good")
+    to_append = ["", "", "", "", "", "", 0, date.today()]
+    df.loc[len(df)] = to_append
     df.drop_duplicates(subset=["Title"], keep="first", inplace=True)
     df = df.sort_values(by=['Sentiment'])
     df = df.reset_index(drop=False)
+    print(df.head())
     df.to_pickle("data.pickle")
-#getData()
+getData()
