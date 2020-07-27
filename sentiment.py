@@ -70,4 +70,3 @@ def getData():
     df = df.reset_index(drop=False)
     print(df.head())
     df.to_pickle("data.pickle")
-getData()
