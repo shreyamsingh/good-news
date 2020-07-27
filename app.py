@@ -12,8 +12,9 @@ def main():
     col = df["Date"]
     today = date.today()
     diff = (today - (col.max().date())).days
-    if diff > 0:
-        sentiment.getData()
+    #if diff > 0:
+        #sentiment.getData()
+    sentiment.getData()
     content = {}
     minSent = float(df.loc[len(df)-6]["Sentiment"])
     for i in range(len(df)-1, len(df)-7, -1):
