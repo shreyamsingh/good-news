@@ -41,7 +41,6 @@ def getProbs(text):
     tokens = remove_noise(word_tokenize(text))
     output = classifier.classify(dict([token, True] for token in tokens))
     dist = classifier.prob_classify(dict([token, True] for token in tokens))
-    #return (output, dist.prob("Positive"))
     return dist.prob("Positive")
 
 def makeDF(df, query):
