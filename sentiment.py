@@ -50,7 +50,6 @@ def makeDF(df, query):
     url = (r'https://newsapi.org/v2/everything?q=' + query + " NOT pandemic NOT dies" + r'&from=' + str(week_ago) + r'&to=' + str(today) + r'&sortBy=popularity&excludeDomains=techcrunch.com,theverge.com,theinventory.com,gizmodo.com&apiKey=' + api_key)
 
     response = requests.get(url).json()
-    print("rq")
     for article in response["articles"]:
         #overallSent = (getProbs(article["title"]) + getProbs(article["content"]) + getProbs(article["description"]))/3
         overallSent = getProbs(article["title"])

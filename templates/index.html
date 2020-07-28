@@ -1,11 +1,12 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@450&display=swap" rel="stylesheet">
 <meta name="viewport" content="initial-scale=1">
 <head>
   <title>Good News!</title>
 </head>
 <body style="padding: 30px; background-color: #ECECEC;">
-<h1 style="color: #87ceeb;">
-  here's some [hopefully] happy news from the past week:
+<h1 style="font-size:3.5vw; font-family: 'Roboto Mono', monospace; color: #444444">
+  some {algorithmically determined} good news from the past week:
 </h1>
 <br>
 <div class='card-deck'>
@@ -81,7 +82,14 @@
   </div>
 </div>
 <br>
-
+<script>
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#news';
+        window.location.reload();
+    }
+}
+</script>
 <style>
 .btn-primary:hover, .btn-primary:visited {
     color: #fff;
