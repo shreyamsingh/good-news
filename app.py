@@ -11,10 +11,10 @@ def main():
     df = pd.read_pickle("tmp/data.pickle")
     col = df["Date"]
     today = datetime.today()
-    diff = (today - (col.max())).seconds // 3600
+    diff = (today - (col.max()))
     print(diff)
     print(df)
-    if diff > 0:
+    if diff.seconds // 3600 > 0 or diff.days > 0:
         sentiment.getData()
     content = {}
     minSent = float(df.loc[len(df)-6]["Sentiment"])

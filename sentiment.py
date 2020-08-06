@@ -47,7 +47,7 @@ def makeDF(df, query):
     api_key = os.environ['NEWS_API_KEY']
     today = date.today()
     week_ago = today - timedelta(days=6)
-    url = (r'https://newsapi.org/v2/everything?q=' + query + " NOT pandemic NOT dies NOT lawsuit" + r'&from=' + str(week_ago) + r'&to=' + str(today) + r'&sortBy=popularity&excludeDomains=techcrunch.com,theverge.com,theinventory.com,gizmodo.com&apiKey=' + api_key)
+    url = (r'https://newsapi.org/v2/everything?language=en&q=' + query + " NOT pandemic NOT dies NOT lawsuit NOT trump" + r'&from=' + str(week_ago) + r'&to=' + str(today) + r'&sortBy=popularity&excludeDomains=techcrunch.com,theverge.com,theinventory.com,gizmodo.com&apiKey=' + api_key)
 
     response = requests.get(url).json()
     for article in response["articles"]:
