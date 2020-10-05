@@ -16,12 +16,6 @@ f = open('classifier.pickle', 'rb')
 classifier = pickle.load(f)
 f.close()
 
-access_token = "950539410763902976-0b3Ihee55U91TJNbOydA1Y9zZNyi80N"
-access_token_secret = "vTL1UMNSbpQ3z6d7G28HFRgJbt5bHX9dj6P4EZCxtFupM"
-
-api = "Yox9NrIMAy1Dy2leEwWmrcyoI"
-api_secret = "RY1HMrZev45Gogx5dKseu2Jzw11JB4JUA4nS2zJkn3bc6a2WBA"
-
 def remove_noise(tweet_tokens, stop_words = ()):
     cleaned_tokens = []
 
