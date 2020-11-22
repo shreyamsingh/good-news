@@ -9,18 +9,11 @@ import pandas as pd
 from io import StringIO
 import pickle
 from datetime import date, timedelta, datetime
-import tweepy
 import os
 
 f = open('classifier.pickle', 'rb')
 classifier = pickle.load(f)
 f.close()
-
-access_token = "950539410763902976-0b3Ihee55U91TJNbOydA1Y9zZNyi80N"
-access_token_secret = "vTL1UMNSbpQ3z6d7G28HFRgJbt5bHX9dj6P4EZCxtFupM"
-
-api = "Yox9NrIMAy1Dy2leEwWmrcyoI"
-api_secret = "RY1HMrZev45Gogx5dKseu2Jzw11JB4JUA4nS2zJkn3bc6a2WBA"
 
 def remove_noise(tweet_tokens, stop_words = ()):
     cleaned_tokens = []
@@ -63,24 +56,6 @@ def makeDF(df, query):
         to_append = [article["title"], article["description"], article["content"], article["url"], article["source"]["name"], article["urlToImage"], overallSent, datetime.strptime(article["publishedAt"][0:10], '%Y-%m-%d')]
         df.loc[len(df)] = to_append
     return df
-def tweet(title, url):
-   access_token = os.environ['TWITTER_ACCESS_TOKEN']
-   access_token_secret = os.environ['TWITTER_SECRET_ACCESS']
-
-   api = os.environ['TWITTER_API']
-   api_secret = os.environ['TWITTER_API_SECRET']
-
-   auth = tweepy.OAuthHandler(api, api_secret)
-   auth.set_access_token(access_token, access_token_secret)
-   api = tweepy.API(auth)
-
-   tweet = api.home_timeline()
-   try:
-      api.update_status(f'{title} {url}')
-   except:
-      return   
-
-
 
 def getData():
     df = pd.DataFrame(columns=["Title", "Description", "Content", "URL", "Source", "imgURL", "Sentiment", "Date"])
@@ -91,7 +66,6 @@ def getData():
     df.drop_duplicates(subset=["Title"], keep="first", inplace=True)
     df = df.sort_values(by=['Sentiment'])
     df = df.reset_index(drop=False)
-    tweet(df.iloc[1].Title, df.iloc[1].URL)
     #print(df.head())
     df.to_pickle("tmp/data.pickle")
 #getData()
