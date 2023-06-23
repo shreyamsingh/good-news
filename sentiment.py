@@ -9,6 +9,7 @@ import pandas as pd
 from io import StringIO
 import pickle
 from datetime import date, timedelta, datetime
+import tweepy
 import os
 
 f = open('classifier.pickle', 'rb')
@@ -57,6 +58,23 @@ def makeDF(df, query):
         df.loc[len(df)] = to_append
     return df
 
+def tweet(title, url):
+   access_token = os.environ['TWITTER_ACCESS_TOKEN']
+   access_token_secret = os.environ['TWITTER_SECRET_ACCESS']
+
+   api = os.environ['TWITTER_API']
+   api_secret = os.environ['TWITTER_API_SECRET']
+
+   auth = tweepy.OAuthHandler(api, api_secret)
+   auth.set_access_token(access_token, access_token_secret)
+   api = tweepy.API(auth)
+
+   tweet = api.home_timeline()
+   try:
+      api.update_status(f'{title} {url}')
+   except:
+      return
+
 def getData():
     df = pd.DataFrame(columns=["Title", "Description", "Content", "URL", "Source", "imgURL", "Sentiment", "Date"])
     df = makeDF(df, "happy")
@@ -66,6 +84,7 @@ def getData():
     df.drop_duplicates(subset=["Title"], keep="first", inplace=True)
     df = df.sort_values(by=['Sentiment'])
     df = df.reset_index(drop=False)
+    #tweet(df.iloc[1].Title, df.iloc[1].URL)
     #print(df.head())
     df.to_pickle("tmp/data.pickle")
 #getData()
