@@ -12,5 +12,5 @@ urllib3==1.26.5
 gunicorn
 Jinja2
 MarkupSafe
-Werkzeug
+Werkzeug==2.3.6
 tweepy==3.9.0
