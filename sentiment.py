@@ -2,7 +2,7 @@ import requests
 from nltk.tag import pos_tag
 from nltk.stem.wordnet import WordNetLemmatizer
 import re, string
-from nltk.corpus import stopwords
+#from nltk.corpus import stopwords
 #from nltk import FreqDist, classify, NaiveBayesClassifier
 from nltk.tokenize import word_tokenize
 import pandas as pd
