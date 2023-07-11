@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    #sentiment.getData()
+    sentiment.getData()
     df = pd.read_pickle("tmp/data.pickle")
     col = df["Date"]
     today = datetime.today()
